@@ -50,6 +50,11 @@ app.get('/students', function(req, res) {
     res.render('students/index', { students });
 });
 
+app.get('/students/:id', function(req, res) {
+    console.log(`The value for the :id route parameter is: ${req.params.id}`);
+    res.render('students/show', {student: attendanceDb.getOne(req.params.id)});
+  });
+
 app.listen(3000, function() {
     console.log('Listening on port 3000');
 });

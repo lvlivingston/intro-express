@@ -14,6 +14,9 @@
                 <%= s.student %>
                     -
                 <%= s.attendance ? 'present' : 'not present' %>
+                <a href="/students/<%= s.id %>">
+                    Click here for details (Student ID# <%= s.id %>)
+                  </a>
             </li>
         <% }); %>
     </ul>
